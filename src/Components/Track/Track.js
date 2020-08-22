@@ -1,10 +1,10 @@
 import React from 'react';
 import './Track.css';
 
-class Track extends React.Component {
+export class Track extends React.Component {
 
     renderAction() {
-        if (this.this.props.isRemoval) {
+        if (this.props.isRemoval) {
             return <buttton className="Track-actions">-</buttton>
         } else {
             return <buttton className="Track-action">+</buttton>
@@ -15,11 +15,12 @@ class Track extends React.Component {
         return (
             <div className="Track">
                 <div className="Track-information">
-                    <h3>track name will go here</h3>
-                    <p>track artist | track album </p>
+                    <h3>{this.props.track.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album} </p>
                 </div>
                 {this.renderAction()}
             </div>
         )
     }
 }
+export default Track;
